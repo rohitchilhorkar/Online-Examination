@@ -8,4 +8,6 @@ import com.pratiti.entity.Exam;
 
 @Repository
 public interface ExamRepository extends JpaRepository<Exam, Integer> {
+
+	
 }
