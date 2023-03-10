@@ -17,6 +17,26 @@ public class QuestionOption {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer questionId;
 
+	private String questionDesc;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "subjectId")
+	private Subject subject;
+
+	private Integer questionLevel;
+
+	private String option1;
+
+	private String option2;
+
+	private String option3;
+
+	private String option4;
+
+	private Integer isCorrect;
+	
+	private String Status;
+
 	public Integer getQuestionId() {
 		return questionId;
 	}
@@ -89,23 +109,14 @@ public class QuestionOption {
 		this.isCorrect = isCorrect;
 	}
 
-	private String questionDesc;
+	public String getStatus() {
+		return Status;
+	}
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "subjectId")
-	private Subject subject;
-
-	private Integer questionLevel;
-
-	private String option1;
-
-	private String option2;
-
-	private String option3;
-
-	private String option4;
-
-	private Integer isCorrect;
-
+	public void setStatus(String status) {
+		Status = status;
+	}
+	
+	
 
 }
