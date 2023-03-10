@@ -10,9 +10,5 @@ public class SpringBootDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
 	}
-<<<<<<< HEAD
+}
 
-}
-=======
-}
->>>>>>> c72b831c4ceea394d03fb0192d02c65241ff3f36

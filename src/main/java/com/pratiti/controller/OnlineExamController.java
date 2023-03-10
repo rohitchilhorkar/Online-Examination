@@ -17,7 +17,7 @@ import com.pratiti.entity.QuestionOption;
 import com.pratiti.entity.Scorecard;
 import com.pratiti.entity.Subject;
 import com.pratiti.entity.User;
-import com.pratiti.exception.CustomerServiceException;
+
 import com.pratiti.model.QuestionDto;
 import com.pratiti.model.SubjectDto;
 import com.pratiti.model.levelsScore;
