@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import com.pratiti.entity.Exam;
 import com.pratiti.entity.QuestionOption;
 import com.pratiti.entity.Scorecard;
 import com.pratiti.entity.Subject;
@@ -16,6 +18,7 @@ import com.pratiti.exception.CustomerServiceException;
 import com.pratiti.model.QuestionDto;
 import com.pratiti.model.SubjectDto;
 import com.pratiti.model.UserParameter;
+import com.pratiti.repository.ExamRepository;
 import com.pratiti.repository.QuestionOptionRepository;
 import com.pratiti.repository.ScorecardRepository;
 import com.pratiti.repository.SubjectRepository;
@@ -32,7 +35,8 @@ public class OnlineExamService {
 	private UserRepository userRepository;
 	@Autowired
 	private ScorecardRepository scorecardRepository;
-
+	@Autowired
+	private ExamRepository examrepository;
 
 	public String addSubjectWithQuestionsAndOptions(SubjectDto subjectDto) {
 
@@ -128,6 +132,24 @@ public class OnlineExamService {
 		}
 		
 		return users;
+	}
+
+	public void setOption(Integer uId, Integer qId, Integer selectedOption) {
+		// TODO Auto-generated method stub
+		Exam e = new Exam();
+		e.setSelectedAnswer(selectedOption);	
+		User user = new User();
+		Optional<User> u = userRepository.findById(uId);
+		user = u.get();
+		e.setUser(user);
+		
+		QuestionOption question = new QuestionOption();
+		Optional<QuestionOption> ques = questionOptionRepository.findById(qId);
+		question = ques.get();
+		e.setQuestionOption(question);
+		
+		examrepository.save(e);
+		
 	}
 
 
