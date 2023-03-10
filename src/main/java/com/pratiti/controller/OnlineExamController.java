@@ -51,6 +51,11 @@ public class OnlineExamController {
 		onlineExamService.setOption(uId, qId, selectedOption);
 		return "Updated Answer Successfully";
 	}
+	@GetMapping(path="/setScoreWithId")
+	public String setScoreWithId(@RequestParam("uId") Integer uId,@RequestParam("sId") Integer sId, @RequestParam("score") Integer score, @RequestParam("level") Integer level) {
+		onlineExamService.setScore(uId, sId, score, level);
+		return "Updated Score Successfully";
+	}
 	
 	@GetMapping(path="/displayScoreWithId")
 	public levelsScore displayScoreWithId(@RequestParam("id") Integer id){

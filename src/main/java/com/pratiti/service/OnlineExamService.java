@@ -152,6 +152,29 @@ public class OnlineExamService {
 		
 	}
 
+	public void setScore(Integer uId, Integer sId, Integer score, Integer level) {
+		// TODO Auto-generated method stub
+		Scorecard e = new Scorecard();
+//		Set Score
+		if(level == 1)e.setLevel1Score(score);
+		else if(level == 2)e.setLevel2Score(score);
+		else e.setLevel3Score(score);
+		
+//		Set User
+		User user = new User();
+		Optional<User> u = userRepository.findById(uId);
+		user = u.get();
+		e.setStudent(user);
+		
+//		Set Subject
+		Subject s = new Subject();
+		Optional<Subject> ques = subjectRepository.findById(sId);
+		s = ques.get();
+		e.setSubject(s);
+		
+		scorecardRepository.save(e);
+	}
+
 
 	
 	
