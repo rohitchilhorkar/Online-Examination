@@ -25,7 +25,7 @@ public class Exam {
     private QuestionOption questionOption;
     
     private Integer selectedAnswer;
-   
+
 	public Integer getId() {
 		return id;
 	}
@@ -57,7 +57,5 @@ public class Exam {
 	public void setSelectedAnswer(Integer selectedAnswer) {
 		this.selectedAnswer = selectedAnswer;
 	}
-    
-
 	   
 }

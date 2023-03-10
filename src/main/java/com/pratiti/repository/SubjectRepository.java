@@ -10,9 +10,11 @@ import com.pratiti.entity.Subject;
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 
-	Optional<Subject> findBySubjectName(String subjectName);
+	
+	public boolean existsBySubjectName(String subjectName);
+	
+	public Optional<Subject> findBySubjectName(String subjectName);
+	
 
-	
-	
 }
 

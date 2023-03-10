@@ -29,7 +29,7 @@ public class Scorecard {
     private Integer level1Score;
     private Integer level2Score;
     private Integer level3Score;
-    
+
 	public Integer getScorecardId() {
 		return scorecardId;
 	}
