@@ -6,6 +6,7 @@ public class SubjectDto {
 	private String subjectName;
 	private int subjectNoOfQuestions;
 	private List<QuestionDto> questions;
+	
 	public String getSubjectName() {
 		return subjectName;
 	}
